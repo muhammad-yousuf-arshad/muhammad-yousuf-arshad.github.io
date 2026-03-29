@@ -1,0 +1,157 @@
+/* styles.css */
+
+/* --- Body & Reset --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f172a;
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* --- Header & Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(2, 6, 23, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1e293b;
+}
+.logo svg text {
+    font-family: "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: bold;
+    fill: #38bdf8;
+}
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav a:hover { color: #38bdf8; }
+
+.menu-icon {
+    display: none;
+    color: #38bdf8;
+    font-size: 30px;
+}
+@media(max-width: 768px){
+    .menu-icon { display: block; }
+    nav {
+        display: none;
+        flex-direction: column;
+        background: #020617;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #1e293b;
+    }
+    nav.show { display: flex; }
+    nav a { margin: 15px 0; font-size: 1.2rem; }
+}
+
+/* --- Section & Cards --- */
+section {
+    padding: 80px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease;
+}
+h2 {
+    color: #38bdf8;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    border-left: 4px solid #38bdf8;
+    padding-left: 15px;
+}
+.card {
+    background: #1e293b;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+.learn-more {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.learn-more:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+.btn {
+    background: #38bdf8;
+    padding: 12px 25px;
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #7dd3fc;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* --- Social Icons --- */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+.social-icons a {
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    background: #1e293b;
+    border-radius: 50%;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.social-icons a:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    transform: scale(1.1);
+}
+.social-icons a svg { fill: currentColor; width: 20px; height: 20px; }
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #020617;
+    color: #64748b;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* --- Homepage Specific --- */
+#home .card h3 i { color: #38bdf8; } /* Home card icons highlight */
