@@ -8,12 +8,12 @@ function closeMenu() {
     document.getElementById("menu").classList.remove("open");
 }
 
-// ===== CLICK OUTSIDE CLOSE =====
+// ===== CLICK OUTSIDE CLOSE (FIXED) =====
 document.addEventListener("click", function (e) {
     const nav = document.getElementById("menu");
     const icon = document.querySelector(".menu-icon");
 
-    if (!nav.contains(e.target) && !icon.contains(e.target)) {
+    if (nav && icon && !nav.contains(e.target) && !icon.contains(e.target)) {
         nav.classList.remove("open");
     }
 });
