@@ -1,60 +1,67 @@
-// ===== TOGGLE MOBILE MENU =====
+// ===== TOGGLE MENU =====
 function toggleMenu() {
-    const nav = document.getElementById("menu");
-    nav.classList.toggle("show");
+    document.getElementById("menu").classList.toggle("open");
 }
 
-// ===== CLOSE MENU WHEN CLICKING OUTSIDE (Mobile UX) =====
-document.addEventListener("click", (e) => {
-    const nav = document.getElementById("menu");
-    const menuIcon = document.querySelector(".menu-icon");
+// ===== CLOSE MENU =====
+function closeMenu() {
+    document.getElementById("menu").classList.remove("open");
+}
 
-    if (nav && menuIcon && !nav.contains(e.target) && !menuIcon.contains(e.target)) {
-        nav.classList.remove("show");
+// ===== CLICK OUTSIDE CLOSE =====
+document.addEventListener("click", function (e) {
+    const nav = document.getElementById("menu");
+    const icon = document.querySelector(".menu-icon");
+
+    if (!nav.contains(e.target) && !icon.contains(e.target)) {
+        nav.classList.remove("open");
     }
 });
 
-// ===== SMOOTH SCROLLING + AUTO-CLOSE MENU =====
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function (e) {
         e.preventDefault();
 
-        // Always close the menu first
-        document.getElementById("menu").classList.remove("show");
+        closeMenu();
 
-        const targetId = this.getAttribute('href');
+        const targetId = this.getAttribute("href");
 
-        // Handle "#home" → scroll to very top
         if (targetId === "#home") {
             window.scrollTo({ top: 0, behavior: "smooth" });
             return;
         }
 
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
+        const target = document.querySelector(targetId);
+
+        if (target) {
             window.scrollTo({
-                top: targetSection.offsetTop - 70,
+                top: target.offsetTop - 70,
                 behavior: "smooth"
             });
         }
     });
 });
 
-// ===== ACTIVE LINK ON SCROLL =====
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const scrollPos = window.scrollY + 120;
+// ===== CONTACT FORM =====
+function handleSubmit() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const msg = document.getElementById("message").value.trim();
 
-    sections.forEach(sec => {
-        if (
-            scrollPos >= sec.offsetTop &&
-            scrollPos < sec.offsetTop + sec.offsetHeight
-        ) {
-            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    if (!name || !email || !msg) {
+        alert("Please fill all fields");
+        return;
+    }
 
-            const id = sec.getAttribute('id');
-            const activeLink = document.querySelector(`nav a[href="#${id}"]`);
-            if (activeLink) activeLink.classList.add('active');
-        }
-    });
-});
+    const success = document.getElementById("form-msg");
+    success.style.display = "block";
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+
+    setTimeout(() => {
+        success.style.display = "none";
+    }, 4000);
+}
