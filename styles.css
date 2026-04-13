@@ -541,3 +541,344 @@
             .edu-entry, .exp-entry { grid-template-columns: 1fr; gap: 0.5rem; }
             .exp-entry { gap: 1rem; }
         }
+</style>
+</head>
+<body>
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="logo">
+        <a href="#home">
+            <svg width="72" height="40">
+                <text x="0" y="33" fill="var(--ink)" font-size="32" font-family="'Playfair Display', serif" font-weight="900">MYA</text>
+            </svg>
+        </a>
+    </div>
+    <i class="bi bi-list menu-icon" onclick="toggleMenu()" aria-label="Menu"></i>
+    <nav id="menu">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#education" onclick="closeMenu()">Education</a>
+        <a href="#projects" onclick="closeMenu()">Projects</a>
+        <a href="#experience" onclick="closeMenu()">Experience</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+</header>
+<!-- ===== MAIN ===== -->
+<main>
+    <!-- HOME -->
+    <section id="home">
+        <div class="home-headline">
+            <p class="eyebrow">Web Developer &amp; Designer</p>
+            <h1>Crafting <em>digital</em><br>experiences with<br>purpose.</h1>
+            <p class="sub">Hello — I'm MYA. I build responsive, thoughtfully designed interfaces that balance aesthetics and function.</p>
+            <a href="#about" class="learn-more">Learn more about me</a>
+        </div>
+        <div class="home-card">
+            <div class="card-num">01</div>
+            <h3><i class="bi bi-mortarboard"></i> Education</h3>
+            <p>Master of Computer Science from a leading university, with a focus on human–computer interaction and software systems.</p>
+            <a href="#education" class="learn-more">View education</a>
+        </div>
+        <div class="home-card">
+            <div class="card-num">02</div>
+            <h3><i class="bi bi-code-slash"></i> Top Projects</h3>
+            <p>Expertise spanning web apps, interactive dashboards, and creative portfolios — built to perform and delight.</p>
+            <a href="#projects" class="learn-more">View projects</a>
+        </div>
+    </section>
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-left">
+            <p class="section-label">About Me</p>
+            <h2>Developer.<br><em style="font-style:italic; color:var(--accent)">Designer.</em><br>Builder.</h2>
+            <p style="color:var(--muted); font-size:0.95rem; max-width:440px; margin-bottom:1.5rem;">
+                I'm a full-stack developer with a deep passion for clean user interfaces and elegant code. I believe the best digital products are born at the intersection of technical precision and creative intuition.
+            </p>
+            <p style="color:var(--muted); font-size:0.95rem; max-width:440px;">
+                When I'm not coding, you'll find me sketching UI concepts, reading about design systems, or exploring the latest in web technology.
+            </p>
+            <div class="skill-tags" style="margin-top:1.8rem;">
+                <span class="tag">HTML / CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Git</span>
+                <span class="tag">SQL</span>
+                <span class="tag">REST APIs</span>
+            </div>
+        </div>
+        <div class="about-right">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                <div class="stat-block">
+                    <div class="num">3+</div>
+                    <div class="label">Years of Experience</div>
+                </div>
+                <div class="stat-block">
+                    <div class="num">20+</div>
+                    <div class="label">Projects Completed</div>
+                </div>
+                <div class="stat-block">
+                    <div class="num">10+</div>
+                    <div class="label">Happy Clients</div>
+                </div>
+                <div class="stat-block">
+                    <div class="num">5</div>
+                    <div class="label">Technologies Mastered</div>
+                </div>
+            </div>
+            <div style="padding:2rem; background:var(--cream); border-left:3px solid var(--accent); margin-top:0.5rem;">
+                <p style="font-family:var(--serif); font-size:1.05rem; font-style:italic; color:var(--ink); line-height:1.7;">
+                    "Good design is not just what it looks like — it's how it works, how it feels, and how it makes people feel."
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- EDUCATION -->
+    <section id="education">
+        <p class="section-label">Education</p>
+        <h2>Academic<br>Background</h2>
+        <div class="edu-entry">
+            <div class="edu-year">2022 – 2024</div>
+            <div class="edu-content">
+                <h3>Master of Computer Science</h3>
+                <div class="institution">University Name · City, Country</div>
+                <p>Specialized in Human–Computer Interaction and Software Engineering. Thesis on adaptive UI systems for accessibility-first design. GPA: 3.9/4.0</p>
+            </div>
+        </div>
+        <div class="edu-entry">
+            <div class="edu-year">2018 – 2022</div>
+            <div class="edu-content">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <div class="institution">University Name · City, Country</div>
+                <p>Core coursework in algorithms, data structures, web development, and database systems. Graduated with honours.</p>
+            </div>
+        </div>
+        <div class="edu-entry">
+            <div class="edu-year">2023</div>
+            <div class="edu-content">
+                <h3>UX Design Professional Certificate</h3>
+                <div class="institution">Google · Online</div>
+                <p>Completed a 6-course program covering design thinking, prototyping, user research, and usability testing.</p>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <p class="section-label">Projects</p>
+        <h2>Selected<br>Work</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon"><i class="bi bi-bar-chart-line"></i></div>
+                <h3>Analytics Dashboard</h3>
+                <p>A real-time data visualization platform with interactive charts, custom filters, and CSV export functionality.</p>
+                <div class="proj-tags">
+                    <span class="proj-tag">React</span>
+                    <span class="proj-tag">D3.js</span>
+                    <span class="proj-tag">Node</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="bi bi-bag-heart"></i></div>
+                <h3>E-Commerce Platform</h3>
+                <p>Full-stack shopping experience with auth, cart management, Stripe integration, and an admin panel.</p>
+                <div class="proj-tags">
+                    <span class="proj-tag">Next.js</span>
+                    <span class="proj-tag">Stripe</span>
+                    <span class="proj-tag">MongoDB</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="bi bi-chat-dots"></i></div>
+                <h3>Real-Time Chat App</h3>
+                <p>Instant messaging application with rooms, typing indicators, and persistent message history.</p>
+                <div class="proj-tags">
+                    <span class="proj-tag">Socket.io</span>
+                    <span class="proj-tag">Express</span>
+                    <span class="proj-tag">Redis</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="bi bi-cpu"></i></div>
+                <h3>AI Writing Assistant</h3>
+                <p>A writing tool that uses LLM APIs to suggest edits, rephrase text, and summarize documents.</p>
+                <div class="proj-tags">
+                    <span class="proj-tag">Python</span>
+                    <span class="proj-tag">FastAPI</span>
+                    <span class="proj-tag">OpenAI</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="bi bi-map"></i></div>
+                <h3>Travel Planner</h3>
+                <p>An itinerary builder with map integration, budget tracking, and shareable trip links.</p>
+                <div class="proj-tags">
+                    <span class="proj-tag">Vue.js</span>
+                    <span class="proj-tag">Mapbox</span>
+                    <span class="proj-tag">Firebase</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="bi bi-person-badge"></i></div>
+                <h3>Developer Portfolio</h3>
+                <p>This very site — designed and coded from scratch with a focus on editorial typography and clean layout.</p>
+                <div class="proj-tags">
+                    <span class="proj-tag">HTML</span>
+                    <span class="proj-tag">CSS</span>
+                    <span class="proj-tag">JS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <p class="section-label">Experience</p>
+        <h2>Work<br>History</h2>
+        <div class="exp-entry">
+            <div class="exp-meta">
+                <div class="exp-period">Jan 2024 – Present</div>
+                <div class="exp-company">Company Name</div>
+            </div>
+            <div class="exp-content">
+                <h3>Frontend Developer</h3>
+                <p>Leading the frontend architecture for a SaaS platform serving 50,000+ users. Collaborate closely with design and product teams to ship features weekly.</p>
+                <ul>
+                    <li>Rebuilt core dashboard in React, reducing load time by 40%</li>
+                    <li>Established the company's first design system with 60+ components</li>
+                    <li>Mentored two junior developers through code reviews and pair programming</li>
+                </ul>
+            </div>
+        </div>
+        <div class="exp-entry">
+            <div class="exp-meta">
+                <div class="exp-period">Jun 2022 – Dec 2023</div>
+                <div class="exp-company">Agency Name</div>
+            </div>
+            <div class="exp-content">
+                <h3>Junior Web Developer</h3>
+                <p>Developed and maintained client websites across various industries — from small businesses to large-scale e-commerce operations.</p>
+                <ul>
+                    <li>Delivered 12+ client projects on time and within scope</li>
+                    <li>Implemented accessibility improvements (WCAG 2.1 AA compliance)</li>
+                    <li>Integrated third-party APIs including payment gateways and CRM systems</li>
+                </ul>
+            </div>
+        </div>
+        <div class="exp-entry">
+            <div class="exp-meta">
+                <div class="exp-period">Summer 2021</div>
+                <div class="exp-company">Startup Name</div>
+            </div>
+            <div class="exp-content">
+                <h3>UI/UX Design Intern</h3>
+                <p>Supported the product team by prototyping new features in Figma and conducting usability tests with real users.</p>
+                <ul>
+                    <li>Designed 3 new feature flows from wireframe to high-fidelity mockup</li>
+                    <li>Ran 8 user interviews to validate design decisions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div>
+            <p class="section-label">Contact</p>
+            <h2>Let's work<br>together.</h2>
+            <p class="contact-sub">Have a project in mind, or just want to say hello? I'd love to hear from you.</p>
+            
+                <a href="https://github.com/muhammad-yousuf-arshad" class="contact-link" target="_blank" rel="noopener">
+                    <i class="bi bi-github"></i>
+                    Let's connect on GitHub
+                </a>
+                <a href="https://linkedin.com/in/muhammad-yousuf-arshad" class="contact-link" target="_blank" rel="noopener">
+                    <i class="bi bi-linkedin"></i>
+                    Let's connect on LinkedIn
+                </a>
+                <a href="https://x.com/M_Yousuf_Arshad" class="contact-link" target="_blank" rel="noopener">
+                    <i class="bi bi-twitter-x"></i>
+                    Follow me on X (formerly Twitter)
+                </a>
+        </div>
+        <div>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Jane Smith">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="jane@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Tell me about your project…"></textarea>
+                </div>
+                <button class="btn-submit" onclick="handleSubmit()">Send Message →</button>
+                <p id="form-msg" style="font-size:0.82rem; color:var(--accent); display:none;">Message sent! I'll be in touch soon.</p>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2026 MYA Portfolio. All rights reserved.</p>
+    <nav class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</footer>
+<script>
+// ===== TOGGLE MENU =====
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+}
+// ===== CLOSE MENU =====
+function closeMenu() {
+    document.getElementById("menu").classList.remove("open");
+}
+// ===== CLICK OUTSIDE CLOSE (FIXED) =====
+document.addEventListener("click", function (e) {
+    const nav = document.getElementById("menu");
+    const icon = document.querySelector(".menu-icon");
+    if (nav && icon && !nav.contains(e.target) && !icon.contains(e.target)) {
+        nav.classList.remove("open");
+    }
+});
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        closeMenu();
+        const targetId = this.getAttribute("href");
+        if (targetId === "#home") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+        }
+        const target = document.querySelector(targetId);
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 70,
+                behavior: "smooth"
+            });
+        }
+    });
+});
+// ===== CONTACT FORM =====
+function handleSubmit() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const msg = document.getElementById("message").value.trim();
+    if (!name || !email || !msg) {
+        alert("Please fill all fields");
+        return;
+    }
+    const success = document.getElementById("form-msg");
+    success.style.display = "block";
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+    setTimeout(() => {
+        success.style.display = "none";
+    }, 4000);
+}
