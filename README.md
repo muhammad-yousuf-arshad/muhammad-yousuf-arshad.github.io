@@ -23,7 +23,7 @@ The following social links on the portfolio are **real and active** — feel fre
 |----------|------|
 | GitHub | [github.com/muhammad-yousuf-arshad](https://github.com/muhammad-yousuf-arshad) |
 | LinkedIn | [linkedin.com/in/muhammad-yousuf-arshad](https://linkedin.com/in/muhammad-yousuf-arshad) |
-| X (Twitter) | [x.com/M_Yousuf_Arshad](https://x.com/MYousufArshad) |
+| X (Twitter) | [x.com/MYousufArshad](https://x.com/MYousufArshad) |
 
 If you find the code well-written or the design impressive, feel free to **star the repository** and **follow on the platforms above** — it means a lot! ⭐
 
