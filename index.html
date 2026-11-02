@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Yousuf Arshad | Portfolio</title>
+    <title>Muhammad Yousuf Arshad | Web Developer &amp; Designer</title>
+    <meta name="description" content="Portfolio of Muhammad Yousuf Arshad — Web Developer &amp; Designer crafting responsive, accessible, and purposeful digital experiences.">
+    <meta name="author" content="Muhammad Yousuf Arshad">
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhammad Yousuf Arshad | Web Developer &amp; Designer">
+    <meta property="og:description" content="Crafting responsive, thoughtfully designed digital interfaces that balance aesthetics and function.">
+    <meta property="og:image" content="logo.svg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Muhammad Yousuf Arshad | Web Developer &amp; Designer">
+    <meta name="twitter:description" content="Crafting responsive, thoughtfully designed digital interfaces that balance aesthetics and function.">
+
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="https://muhammad-yousuf-arshad.github.io/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Google reCAPTCHA v3 — replace YOUR_RECAPTCHA_SITE_KEY with your real site key -->
-    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
 </head>
 <body>
 <header>
@@ -21,15 +33,18 @@
         </a>
     </div>
 
-    <i class="bi bi-list menu-icon" onclick="toggleMenu()" aria-label="Menu"></i>
+    <button class="menu-icon" type="button" aria-label="Toggle navigation menu" aria-expanded="false" id="menu-toggle">
+        <i class="bi bi-list"></i>
+    </button>
 
     <nav id="menu">
-        <a href="#home" onclick="closeMenu()">Home</a>
-        <a href="#about" onclick="closeMenu()">About</a>
-        <a href="#education" onclick="closeMenu()">Education</a>
-        <a href="#projects" onclick="closeMenu()">Projects</a>
-        <a href="#experience" onclick="closeMenu()">Experience</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
@@ -51,6 +66,13 @@
             <p>A complete business website built end-to-end for Western Silk Mills — from layout and design system to a working contact page.</p>
             <a href="#projects" class="learn-more">View project</a>
         </div>
+
+        <div class="home-card">
+            <div class="card-num">02</div>
+            <h3><i class="bi bi-lightning-charge"></i> Open to Work</h3>
+            <p>Available for freelance web design &amp; development projects, front-end roles, and creative technical collaborations.</p>
+            <a href="#contact" class="learn-more">Get in touch</a>
+        </div>
     </section>
 
     <!-- ABOUT -->
@@ -64,15 +86,6 @@
             <p style="color:var(--muted); font-size:0.95rem; max-width:440px;">
                 When I'm not learning to code, you'll find me sketching UI concepts, exploring design tools like Figma and Canva, or studying the basics of how great websites are built.
             </p>
-            <div class="skill-tags" style="margin-top:1.8rem;">
-                <span class="tag">Graphics Designing</span>
-                <span class="tag">Website Designing &amp; Development</span>
-                <span class="tag">HTML / CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Figma</span>
-                <span class="tag">Canva</span>
-                <span class="tag">Git</span>
-            </div>
         </div>
         <div class="about-right">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
@@ -86,18 +99,36 @@
                 </div>
                 <div class="stat-block">
                     <div class="num">2</div>
-                    <div class="label">Core Skills</div>
+                    <div class="label">Core Fields</div>
                 </div>
                 <div class="stat-block">
                     <div class="num">∞</div>
                     <div class="label">Eagerness to Learn</div>
                 </div>
             </div>
-            <div style="padding:2rem; background:var(--cream); border-left:3px solid var(--accent); margin-top:0.5rem;">
-                <p style="font-family:var(--serif); font-size:1.05rem; font-style:italic; color:var(--ink); line-height:1.7;">
+            <div class="quote-box">
+                <p>
                     "Good design is not just what it looks like — it's how it works, how it feels, and how it makes people feel."
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <p class="section-label">Skills</p>
+        <h2>Tools &amp;<br>Expertise</h2>
+        <p style="color:var(--muted); font-size:0.95rem; max-width:560px;">
+            A growing toolkit across web development, visual design, and the tools I use to plan and build digital experiences.
+        </p>
+        <div class="skill-tags">
+            <span class="tag">Graphic Design</span>
+            <span class="tag">Web Design &amp; Development</span>
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Canva</span>
+            <span class="tag">Git</span>
         </div>
     </section>
 
@@ -182,7 +213,7 @@
                     Islamia Government Science College
                 </div>
                 <p>
-                    Intermediate (ICS) in Computer Science, with foundational knowledge in IT systems, data management, and officeproductivity tools.
+                    Intermediate (ICS) in Computer Science, with foundational knowledge in IT systems, data management, and office productivity tools.
                 </p>
             </div>
         </div>
@@ -197,7 +228,7 @@
                     <a href="https://duet.edu.pk"
                        target="_blank"
                        rel="noopener"
-                       style="color:#c05638; text-decoration:none;">
+                       style="color:var(--accent); text-decoration:none;">
                         Dawood University of Engineering &amp; Technology
                     </a>
                 </div>
@@ -215,6 +246,7 @@
             <h2>Let's work<br>together.</h2>
             <p class="contact-sub">Have a project in mind, or just want to say hello? I'd love to hear from you.</p>
             
+            <div class="contact-links">
                 <a href="https://github.com/muhammad-yousuf-arshad" class="contact-link" target="_blank" rel="noopener">
                     <i class="bi bi-github"></i>
                     Let's connect on GitHub
@@ -227,24 +259,61 @@
                     <i class="bi bi-twitter-x"></i>
                     Follow me on X (formerly Twitter)
                 </a>
+
+                <!-- Dedicated Expandable Space for Other Platforms -->
+                <div class="other-links-section">
+                    <button type="button" class="other-toggle-btn" id="other-toggle-btn" aria-expanded="false" aria-controls="other-links-drawer">
+                        <span class="other-toggle-left">
+                            <i class="bi bi-grid"></i>
+                            <span>Other Platforms</span>
+                        </span>
+                        <span class="other-toggle-indicator">
+                            <span class="other-toggle-text">See more</span>
+                            <i class="bi bi-chevron-down other-toggle-arrow"></i>
+                        </span>
+                    </button>
+
+                    <div class="other-links-drawer" id="other-links-drawer" aria-hidden="true">
+                        <div class="other-drawer-inner">
+                            <div class="other-links-grid">
+                                <a href="https://facebook.com/muhammadyousufarshad.official" class="contact-link other-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-facebook"></i>
+                                    <span>Facebook</span>
+                                    <i class="bi bi-arrow-up-right link-corner-icon"></i>
+                                </a>
+                                <a href="https://discord.com/users/1423912051712987186" class="contact-link other-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-discord"></i>
+                                    <span>Discord</span>
+                                    <i class="bi bi-arrow-up-right link-corner-icon"></i>
+                                </a>
+                                <a href="https://www.x.com/YousufBinArshad/" class="contact-link other-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                    <i class="bi bi-arrow-up-right link-corner-icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div>
             <form class="contact-form" id="contact-form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+                    <input type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
                 </div>
                 <button class="btn-submit" type="submit" id="submit-btn">Send Message →</button>
-                <p id="form-msg" style="font-size:0.82rem; display:none;"></p>
+                <p id="form-msg" style="font-size:0.85rem; display:none;"></p>
             </form>
         </div>
     </section>
@@ -253,16 +322,18 @@
 
 <!-- ===== FOOTER ===== -->
 <footer>
-    <p>
-    © 2026
-        <a href="https://wa.me/923371968783?text=Hello%20Muhammad%2C%20I%20found%20you%20through%20your%20portfolio."
+    <p class="footer-copy">
+        <span class="footer-year">© 2026</span>
+        <a href="https://www.x.com/YousufBinArshad/" class="footer-link"
            target="_blank"
-           rel="noopener">
+           rel="noopener noreferrer">
             Muhammad Yousuf Arshad
-        </a>'s Portfolio. All rights reserved.
+        </a>
+        <span>All rights reserved.</span>
     </p>
-    <nav class="footer-nav">
+    <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -270,4 +341,3 @@
 <script src="script.js" defer></script>
 </body>
 </html>
-
