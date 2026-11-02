@@ -1,67 +1,110 @@
-// ===== TOGGLE MENU =====
+// ===== NAVIGATION =====
+const menuBtn = document.getElementById("menu-toggle");
+const menuNav = document.getElementById("menu");
+
 function toggleMenu() {
-    document.getElementById("menu").classList.toggle("open");
+    if (!menuNav) return;
+    const isOpen = menuNav.classList.toggle("open");
+    if (menuBtn) {
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+    }
 }
 
-// ===== CLOSE MENU =====
 function closeMenu() {
-    document.getElementById("menu").classList.remove("open");
+    if (!menuNav) return;
+    menuNav.classList.remove("open");
+    if (menuBtn) {
+        menuBtn.setAttribute("aria-expanded", "false");
+    }
 }
 
-// ===== CLICK OUTSIDE CLOSE (FIXED) =====
-document.addEventListener("click", function (e) {
-    const nav = document.getElementById("menu");
-    const icon = document.querySelector(".menu-icon");
+if (menuBtn) {
+    menuBtn.addEventListener("click", toggleMenu);
+}
 
-    if (nav && icon && !nav.contains(e.target) && !icon.contains(e.target)) {
-        nav.classList.remove("open");
+// Close menu when clicking outside
+document.addEventListener("click", function (e) {
+    if (menuNav && menuBtn && !menuNav.contains(e.target) && !menuBtn.contains(e.target)) {
+        closeMenu();
     }
 });
 
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
+// Close menu on pressing Escape key
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+        closeMenu();
+    }
+});
+
+// Close menu on nav link click
+document.querySelectorAll("#menu a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
+
+// ===== CONTACT FORM HANDLING =====
+const contactForm = document.getElementById("contact-form");
+const formMsg = document.getElementById("form-msg");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        closeMenu();
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const msgInput = document.getElementById("message");
 
-        const targetId = this.getAttribute("href");
+        const name = nameInput ? nameInput.value.trim() : "";
+        const email = emailInput ? emailInput.value.trim() : "";
+        const msg = msgInput ? msgInput.value.trim() : "";
 
-        if (targetId === "#home") {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+        if (!name || !email || !msg) {
+            showFormFeedback("Please fill out all fields before submitting.", "error");
             return;
         }
 
-        const target = document.querySelector(targetId);
+        // Display feedback message
+        showFormFeedback(`Thank you, ${name}! Your message has been prepared. I'll get back to you soon.`, "success");
 
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 70,
-                behavior: "smooth"
-            });
-        }
+        // Clear form inputs
+        contactForm.reset();
     });
-});
+}
 
-// ===== CONTACT FORM =====
-function handleSubmit() {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const msg = document.getElementById("message").value.trim();
+function showFormFeedback(text, type) {
+    if (!formMsg) return;
+    formMsg.textContent = text;
+    formMsg.style.display = "block";
+    formMsg.style.marginTop = "0.85rem";
+    formMsg.style.lineHeight = "1.5";
 
-    if (!name || !email || !msg) {
-        alert("Please fill all fields");
-        return;
+    if (type === "success") {
+        formMsg.style.color = "var(--accent)";
+    } else {
+        formMsg.style.color = "#ff7b72";
     }
 
-    const success = document.getElementById("form-msg");
-    success.style.display = "block";
-
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("message").value = "";
-
     setTimeout(() => {
-        success.style.display = "none";
-    }, 4000);
+        formMsg.style.display = "none";
+    }, 6000);
+}
+
+// ===== OTHER PLATFORMS TOGGLE =====
+const otherToggleBtn = document.getElementById("other-toggle-btn");
+const otherDrawer = document.getElementById("other-links-drawer");
+const otherToggleText = document.querySelector(".other-toggle-text");
+
+if (otherToggleBtn && otherDrawer) {
+    otherToggleBtn.addEventListener("click", function () {
+        const isExpanded = otherToggleBtn.getAttribute("aria-expanded") === "true";
+        const nextState = !isExpanded;
+
+        otherToggleBtn.setAttribute("aria-expanded", String(nextState));
+        otherToggleBtn.classList.toggle("active", nextState);
+        otherDrawer.classList.toggle("open", nextState);
+        otherDrawer.setAttribute("aria-hidden", String(!nextState));
+
+        if (otherToggleText) {
+            otherToggleText.textContent = nextState ? "See less" : "See more";
+        }
+    });
 }
